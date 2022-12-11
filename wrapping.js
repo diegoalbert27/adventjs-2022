@@ -21,19 +21,15 @@
  * 
  */
 
-function generateWrapper(sizeGift) {
-  let wrapper = ''
-  for (let index = 1; index <= sizeGift; index++) {
-    wrapper += '*'
+function wrapping(gifts) {
+  const generateWrapper = (gift) => {
+    let wrapper = '*'.repeat(gift.length)
+    wrapper += '**'
+    
+    return `${wrapper}\n*${gift}*\n${wrapper}`
   }
 
-  return wrapper + '**'
-}
-
-function wrapping(gifts) {
-  return gifts
-    .map(gift => ({ gift, wrapper: generateWrapper(gift.length) }))
-    .map(gift => (`${gift.wrapper}\n*${gift.gift}*\n${gift.wrapper}`))
+  return gifts.map(generateWrapper)
 }
 
 const gifts = ['book', 'game', 'socks']
