@@ -3,13 +3,12 @@ function countTime(leds) {
   while (leds.some((led, index) => led === 0 && leds.at(index - 1) === 1)) {
     const ledsPowered = leds.map((led, index) => {
       if (led === 0 && leds.at(index - 1) === 1) {
-        return led + 1
+        return 1
       }
-
       return led
     })
 
-    leds = [...ledsPowered]
+    leds = ledsPowered
 
     totalTime += 7
   }
