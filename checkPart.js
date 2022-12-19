@@ -16,7 +16,7 @@ function checkPart(part) {
   }).some(isPalindrome => isPalindrome === true)
 }
 
-console.log(checkPart("midu")) // true
+console.log(checkPart("uwu")) // true
 // "uwu" es un palíndromo sin eliminar ningún carácter
 
 // checkPart("miidim") // true
